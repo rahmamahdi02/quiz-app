@@ -12,9 +12,9 @@ const PORT = 5000;
 // Configuring cors middleware
 app.use(cors());
 
-// Configuring body parser middleware
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+// // Configuring body parser middleware
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
 
 // //creates an endpoint for the route `/`
 app.get("/", (req, res) => {
@@ -23,17 +23,17 @@ app.get("/", (req, res) => {
 
 // Make the GET request for the GAME Api for grabbing all the questions 
 
-app.get('/api/quizinfo', async(req, res) => {
-  const URL = `https://opentdb.com/api.php?amount=6&category=22&difficulty=easy&type=multiple`;
+app.get("/api/game", async (req, res) => {
+  const url = `https://opentdb.com/api.php?amount=5&category=9&difficulty=medium&type=boolean`;
   try {
-    const response = await fetch(URL);
+    const response = await fetch(url);
     const data = await response.json();
+    //console.log("Line 27 server.js", data);
     res.send(data);
   } catch (err) {
-    console.log("Error", err);
+    console.error("Fetch error: ", err);
   }
 });
-
 
   // //hardcode the game response for testing reasons to don't saturate my API call. 
 
