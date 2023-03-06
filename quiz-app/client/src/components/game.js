@@ -6,17 +6,20 @@ const Game = (props) => {
     const [questions, setQuestions] = useState([]);
 
     const loadData = () => {
-        fetch('http://localhost:5000/api/game')
-            .then((response) => response.json())
-            .then(data => {
-                console.log("This is line 11", data.results);
-                setQuestions(data.results);
-            })
-    }
-
-    useEffect(() => {
+        fetch('http://localhost:8080/api/hardcodequizinfo')
+          .then((response) => response.json())
+          .then(
+            (data) => {
+              console.log(data);
+    
+              setQuizInfo(data);
+            }
+          );
+      };
+    
+      useEffect(() => {
         loadData();
-    }, [])
+      }, []);
 
     return (
         <div className="Container">

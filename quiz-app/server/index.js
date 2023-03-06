@@ -23,12 +23,24 @@ app.get("/", (req, res) => {
 
 // Make the GET request for the GAME Api for grabbing all the questions 
 
+app.get('/api/quizinfo', async(req, res) => {
+  const URL = `https://opentdb.com/api.php?amount=6&category=22&difficulty=easy&type=multiple`;
+  try {
+    const response = await fetch(URL);
+    const data = await response.json();
+    res.send(data);
+  } catch (err) {
+    console.log("Error", err);
+  }
+});
+
 
   // //hardcode the game response for testing reasons to don't saturate my API call. 
+
 app.get('/api/game', (req, res) =>{
     res.json(fakedata);
 })
 
 
 
-app.listen(PORT, () => console.log(`Hola! Server running on Port http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Mar7aba! Server running on Port http://localhost:${PORT}`));

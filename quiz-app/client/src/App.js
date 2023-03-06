@@ -12,6 +12,8 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Quiz App</h1>
+      <p>Welcome to this mini quiz!</p>
     <Header user={user} />
     <UserForm grabUser={handleUser} />
     {user ? <Game /> : null}
