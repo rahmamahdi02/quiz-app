@@ -31,7 +31,7 @@ app.get("/api/game", async (req, res) => {
     
     res.send(data);
   } catch (err) {
-    console.error("error");
+    alert("error");
   }
 });
 
