@@ -6,7 +6,7 @@ const Game = (props) => {
     const [questions, setQuestions] = useState([]);
 
     const loadData = () => {
-        fetch('http://localhost:8080/api/hardcodequizinfo')
+        fetch('http://localhost:8080/api/game')
           .then((response) => response.json())
           .then(
             (data) => {
