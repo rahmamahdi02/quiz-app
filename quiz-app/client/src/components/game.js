@@ -1,3 +1,5 @@
+
+
 import { useState, useEffect } from "react";
 import QuestionCard from "./questioncard";
 
@@ -6,20 +8,18 @@ const Game = (props) => {
     const [questions, setQuestions] = useState([]);
 
     const loadData = () => {
-        fetch('http://localhost:8080/api/game')
-          .then((response) => response.json())
-          .then(
-            (data) => {
-              console.log(data);
-    
-              setQuizInfo(data);
-            }
-          );
-      };
-    
-      useEffect(() => {
+        // remember that this link needs to match the port number and path on backend
+        fetch('http://localhost:800/api/game')
+            .then((response) => response.json())
+            .then(data => {
+                console.log("This is line 11", data.results);
+                setQuestions(data.results);
+            })
+    }
+
+    useEffect(() => {
         loadData();
-      }, []);
+    }, [])
 
     return (
         <div className="Container">

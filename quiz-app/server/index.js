@@ -24,14 +24,19 @@ app.get("/", (req, res) => {
 // Make the GET request for the GAME Api for grabbing all the questions 
 
 app.get("/api/game", async (req, res) => {
-  const url = `https://opentdb.com/api.php?amount=5&category=9&difficulty=medium&type=booleaaan`;
+  const url = `https://opentdb.com/api.php?amount=5&category=9&difficulty=medium&type=booleann`;
+
   try {
-    const response = await fetch(url);
+    const 
+    response = await fetch(url);
     const data = await response.json();
     
     res.send(data);
+
   } catch (err) {
-    alert("error");
+
+    console.error("error");
+
   }
 });
 
