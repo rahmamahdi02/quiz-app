@@ -5,16 +5,22 @@ import './App.css';
 import { useState } from "react";
 
 function App() {
+
+  // state to update user
+
   const [user, setUser] = useState("");
   const handleUser = (text) =>{
     setUser(text);
   }
 
+  // JSX returns divs for UI
   return (
     <div className="App">
-      <h1>Quiz App</h1>
+      <h1>Trivia</h1>
       <p>Welcome to this mini quiz!</p>
+
     <Header user={user} />
+    {/* conditional statement, if user submits name => load game */}
     <UserForm grabUser={handleUser} />
     {user ? <Game /> : null}
       
