@@ -9,7 +9,7 @@ const Game = (props) => {
 
     const loadData = () => {
         // remember that this link needs to match the port number and path on backend
-        fetch('http://localhost:800/api/game')
+        fetch('http://localhost:5000/api/game')
             .then((response) => response.json())
             .then(data => {
                 console.log("This is line 11", data.results);
