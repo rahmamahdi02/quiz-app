@@ -1,12 +1,20 @@
+
+
 .App {
-  background-color: #eaeff1;
+  background-color: #216783;
   font-family: "Raleway", sans-serif;
   display:flex; 
   flex-direction:column; 
   justify-content:center;
+  background-image: url(file:///Users/tpl1122_18/Downloads/Untitled%20design%20(1).png);
+
 }
 
 .textHeader{
+  align-self: center;
+}
+
+.text{
   align-self: center;
 }
 
@@ -37,5 +45,8 @@
   border-radius: 12px;
 
   width: 70%;
+
+  align-self: center;
+
 
 }

@@ -4,11 +4,12 @@ const Header = (props) => {
 
   if (props.user) {
 
-    message = `Welcome to my game ${props.user}`;
+    message = `${props.user}! Are You Smarter Than A 5th Grader?
+    `;
 
   } else {
     
-    message = `Welcome to my game`;
+    message = `Are You Smarter Than A 5th Grader? Prove It!`;
   }
   
   return (
