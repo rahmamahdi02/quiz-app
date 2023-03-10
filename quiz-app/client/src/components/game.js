@@ -1,5 +1,4 @@
 import React, {useState, useRef} from 'react';
-//import "./questiongrid.css";
 import QuestionCard from "./questioncard";
 import {decode} from 'html-entities';
 import "./game.css";
