@@ -57,8 +57,11 @@ const Game = () => {
       }
 
     return (
-        <>
-        <p style={{fontSize: "30px"}}>Choose your subject below!</p>
+      <div className="Game">
+     <p>Score: {(score.current/5)*100}%</p>
+
+        <p style={{fontSize: "15px", }}>Choose Your Subject Below</p>
+
             <div className="questions">
                 <div>
                     { questionData ? questionData  === "404" ? (
@@ -69,14 +72,13 @@ const Game = () => {
                     <>
                     <QuestionCard result={questionData.results[toggleQuestion]} choice={choice}/>
                     <form onSubmit={handleQuestion}>
-                        <input type="submit" value="NEXT" className="button-53" onSubmit={handleQuestion} />
+                        <input type="submit" value="NEXT" className="button.submit" onSubmit={handleQuestion} />
                     </form>
                 </>
                 ) : (
                     <>
-                        <p>Score: {(score.current/5)*100}%</p>
                         <p>Did you pass? Try again!</p>
-                        <input type="button" value ="Try Again" className="button-53" onClick={refreshPage} />
+                        <input type="button" value ="Try Again" className="button.submit" onClick={refreshPage} />
                         <div>
                         </div>
                     </>
@@ -92,7 +94,7 @@ const Game = () => {
                             <option value="art">Art</option>
                             <option value="history">History</option>
                         </select><br/>
-                        <input type="submit" value="START" className="button-53" onSubmit={handleSubmit}/>
+                        <input type="submit" value="START" className="button.submit" onSubmit={handleSubmit}/>
                     </form><br />
                     
                 </>
@@ -100,7 +102,7 @@ const Game = () => {
             }
                 </div>
             </div>
-        </>
+        </div>
     )
 };
 

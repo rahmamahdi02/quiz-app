@@ -1,3 +1,11 @@
+.QuestionCard {
+  background-color: #ffffff;
+  font-family: "Raleway", sans-serif;
+  display:flex; 
+  flex-direction:column; 
+  justify-content:center;
+}
+
 .button {
     font-family:'Courier New', Courier, monospace;
     background-color:black;
@@ -14,7 +22,7 @@
 
 
 /* CSS */
-.button-53 {
+.button.submit{
   background-color: #106717;
   border: 0 solid #E5E7EB;
   box-sizing: border-box;
